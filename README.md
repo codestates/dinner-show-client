@@ -1,1 +1,1 @@
-# my-famous-restaurant-list-client
+# dinner-show-client
