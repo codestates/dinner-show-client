@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/codestates/dinner-show-client#readme",
   "devDependencies": {
-    "axios": "^0.21.1"
-  }
+    "axios": "^0.21.1",
+    "n": "^7.0.1"
+  },
+  "dependencies": {}
 }
