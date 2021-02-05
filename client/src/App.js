@@ -12,12 +12,13 @@ class App extends Component {
     //! For Main component state
       this.state = {
         data: props
+        
     }
   }
 
   // getSearchData() {
   //   axios.get()
-  
+  // }
 
 
   render() {
