@@ -1,25 +1,41 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from 'react';
+import './App.css';
+import Nav from './components/Nav';
+import Header from './components/Header';
+import Main from './components/Main';
+// import axios from 'axios'; // install 해야함
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    //! For Main component state
+      this.state = {
+        data: props
+        
+    }
+  }
+
+  // getSearchData() {
+  //   axios.get()
+  // }
+
+
+  render() {
+    return (
+      <div className="container">
+            <Nav />
+            <Header />
+            <Main />
+            <Main />
+            <Main />
+            <Main />
+            <Main />
+            <Main />
+      </div> 
+  
+    );
+  }
 }
 
 export default App;

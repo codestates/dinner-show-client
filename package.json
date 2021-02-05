@@ -8,12 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gwon5512/dinner-show-client.git"
+    "url": "git+https://github.com/JuicyJerry/dinner-show-client.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gwon5512/dinner-show-client/issues"
+    "url": "https://github.com/JuicyJerry/dinner-show-client/issues"
   },
-  "homepage": "https://github.com/gwon5512/dinner-show-client#readme"
+  "homepage": "https://github.com/JuicyJerry/dinner-show-client#readme"
 }
+ 
