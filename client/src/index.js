@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import LoginPage from './LoginPageComponents/LoginPage.js';
+// import MainPage from './MainPageComponents/MainPage.js';
+// import ReadPage from './ReadPageComponents/ReadPage.js';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <LoginPage />,
+  // <ReadPage />,
+  // <MainPage />,
   document.getElementById('root')
 );
 
