@@ -1,14 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import LoginPage from './LoginPageComponents/LoginPage.js';
-// import MainPage from './MainPageComponents/MainPage.js';
-// import ReadPage from './ReadPageComponents/ReadPage.js';
+import Mypage from "./MypageComponents/Mypage";
 
 ReactDOM.render(
-  <LoginPage />,
-  // <ReadPage />,
-  // <MainPage />,
+  <MainPage />,
   document.getElementById('root')
 );
-
- 
