@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import Nav from './components/Nav';
-import Header from './components/Header';
-import Main from './components/Main';
+import './MainPage.css';
+import Nav from './Nav';
+import Header from './Header';
+import Main from './Main';
 // import axios from 'axios'; // install 해야함
 
 
-class App extends Component {
+class MainPage extends Component {
   constructor(props) {
     super(props);
     //! For Main component state
@@ -38,4 +38,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default MainPage;
