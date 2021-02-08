@@ -3,7 +3,7 @@ import axios from "axios";
 
 class MyComponent extends Component {
   handleOnClick = () => {
-    axios.get("http://13.209.89.239 :5000/deploytest", {}).then((res) => {
+    axios.get("http://13.209.89.239:5000/deploytest", {}).then((res) => {
       console.log(res);
     });
   };
