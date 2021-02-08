@@ -3,8 +3,7 @@ import './LoginPage.css';
 
 function Login() {
     return (
-        <div>
-            
+        <div id="parent-container">
             <div id="container">
                 <form class="userLogin">
                     <input type="text" placeholder="ID" class="loginInput"></input>
@@ -19,12 +18,13 @@ function Login() {
                     <input type="submit" value="google" id="googleLogin"></input>
                 </div>
 
-                <div id="signupBtn">
+                <div id="userSignup">
                     <span>아직 회원이 아니신가요?</span>
                     <input type="submit" value="회원가입" id="signupBtn"></input>
                 </div>
             </div>  
         </div>
+
     )
 }
 

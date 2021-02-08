@@ -2,19 +2,24 @@
     box-sizing: border-box;
 }
 
+#parent-container {
+    margin-top: 20%;
+    background-color: gray;
+}
+
 #container {
     border: 10px solid #ff6347;
     padding: 10px;
     display: flex;
-
+    background-color: burlywood;
 }
 
 .userLogin {
     display: flex;
     flex-direction: column;
     border: 10px solid black;
+    margin: 0 0 0px 25%;
     width: 40%;
-
 }
 
 .loginInput {
@@ -24,27 +29,38 @@
 }
 
 #loginBtn {
-    display: block;
-}
-
-#loginBtn {
-    display: block;
-    font-size: 0.5rem;
+    display: inline-block;
+    margin-right: 50px;
+    
 }
 
 #socialLogin {
-    float: left;
+    margin-left: 10%;
     top: 30%;
     border: 5px solid green;
     padding: 10px;
+    display: inline-block;
+    margin-top: 10%;
+}
+
+#googleLogin {
     display: block;
+    margin: 0 auto;
+    clear: both;
+}
+
+#userSignup {
+    margin-left: 20%;
+    top: 50%;
+    border: 5px solid rgb(173, 64, 56);
+    padding: 10px;
+    display: inline-block;
+    margin-top: 10%;
 
 }
 
 #signupBtn {
-    float: left;
-    border: 5px solid yellow;
-    display: flex;
-    padding: 10px;
-
+    display: block;
+    margin: 0 auto;
+    clear: both;
 }
