@@ -5,10 +5,6 @@ import MainPage from './MainPageComponents/MainPage.js';
 // import ReadPage from './ReadPageComponents/ReadPage.js';
 
 ReactDOM.render(
-  // <LoginPage />,
-  // <ReadPage />,
   <MainPage />,
   document.getElementById('root')
 );
-
- 
