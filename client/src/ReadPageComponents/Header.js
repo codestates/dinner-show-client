@@ -4,8 +4,8 @@ function Header() {
     return (
         <div className="headers">
             <form action="URL">
-                <input type="button" className="header header-trend" value="트렌딩"></input>
-                <input type="button" className="header header-new" value="최신"></input> 
+                <input type="button" className="header header-heart" value="♥"></input>
+                <input type="text" className="header header-write"></input>
             </form>
         </div>
     ) 
