@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import "./Mypage.css";
-import "./SignupPagecomponents/SignupPage.css";
-import Mypage from "./MypageComponents/Mypage";
+import "./WritePagecomponents/WritePage.css";
+import Mypage from "./MyPageComponents/Mypage";
 import SignupPage from "./SignupPagecomponents/SignupPage";
+import WritePage from "./WritePagecomponents/WritePage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SignupPage />
+    <WritePage />
   </React.StrictMode>,
   document.getElementById("root")
 );
