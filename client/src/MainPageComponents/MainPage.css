@@ -1,0 +1,96 @@
+.container {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #C4C4C4;
+}
+
+.navs {
+  border: 1px solid darkmagenta ;
+  min-height: 15vh;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+  background-color: #D07D7D;
+}
+
+.nav-logo {
+  width: 14vw;
+  height: 8vh;
+  background-color: #8BBB84;
+  float: left;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-search {
+  width: 14vw;
+  height: 8vh;
+  background-color: #8BBB84;
+  margin-right: 1rem;
+  float: right;
+  margin-top: 1rem;
+}
+
+
+.nav-login {
+  width: 14vw;
+  height: 8vh;
+  background-color: #8BBB84;
+  float: right;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.headers {
+  border: 1px solid darkmagenta ;
+  min-height: 15vh;
+  margin-top: 5%;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-top: 2%;
+  background-color: #6994BB;
+}
+
+.header-trend {
+  width: 14vw;
+  height: 8vh;
+  background-color: #8BBB84;
+  float: left;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.header-new {
+  width: 14vw;
+  height: 8vh;
+  background-color: #8BBB84;
+  float: left;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.mains {
+  display: inline-block;
+  border: 1px solid darkmagenta ;
+  max-width: 30vh;
+  min-height: 30vh;
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-top: 2%;
+  background-color: #d1b0b0;
+  width: 30%;  
+}
+
+.main-section {
+  background-color: white;
+  text-align: center;
+}
+
+/* .icon-search {
+  background-color: black;
+top: 50%;
+} */
