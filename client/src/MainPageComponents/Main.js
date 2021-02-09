@@ -1,17 +1,22 @@
 import React  from 'react';
 
-function Main() {
+function Main({content}) {
+    // console.log(content)
+    // let addContent = <div className="mains">{contentmap((content) => (<section className="main main-section" key={content.id}>{content.id}.{content.title}</section>))}</div>
+    // document.querySelector('.container').append(addContent);
     return (
+        // console.log(content),
         <div className="mains">
-            <div className="main-wrapper">
-            {/* //? section: block */}
-                <section className="main main-section">
-                    {`One of the pioneers of the CSS Reset method, Eric Meyer, created a Reset stylesheet that is still in use on millions of websites today. Most people use it in its unedited form, despite Meyer’s recommendation against this:`}
+            {
+
+            // document.querySelector('.mains').append(
+                <section className="main main-section" key={content.id}>
+                    {content.id}.{content.title}
                 </section>
+                // )
+            }
             </div>
-        </div>
-    ) 
-}
-
-export default Main;
-
+        )
+    }
+        
+    export default Main;
