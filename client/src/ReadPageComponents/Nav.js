@@ -1,5 +1,5 @@
 import React from "react";
-import GoogleBtn from "./GoogleBtn";
+import GoogleBtn from "../MainPageComponents/GoogleBtn";
 
 function Nav() {
   return (
@@ -21,7 +21,7 @@ function Nav() {
           className="nav nav-search"
           value="돋보기 이미지"
         ></input>
-        <GoogleBtn />
+        
       </form>
     </div>
   );

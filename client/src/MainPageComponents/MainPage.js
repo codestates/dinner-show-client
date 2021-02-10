@@ -30,7 +30,12 @@ class MainPage extends Component {
 
   getSearchData() {
     axios
-      .get("http://13.209.89.239:5000/contents")
+      .get("https://api.dinnershow.org/contents", {
+        headers: {
+          withCredential: true,
+        },
+      })
+      //
       .then(function (response) {
         // console.log(response.data.data[0]);
         // console.log(response.data.data);
