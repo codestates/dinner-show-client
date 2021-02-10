@@ -12,20 +12,25 @@ class ReadPage extends Component {
     //! For Main component state
       this.state = {
         data: props
-        
     }
+    this.colorChange = this.colorChange.bind(this);
   }
 
-  // getSearchData() {
-  //   axios.get()
-  // }
+  colorChange() {
+    const color = ["e7e6e1"];
 
+    // let num = Math.floor(Math.random() * color.length);
+    let bodyTag = document.getElementById("heartBtn");
+    console.log(bodyTag)
+
+    // bodyTag.style.backgroundColor = color[0];
+  }
 
   render() {
     return (
       <div className="container">
             <Nav />
-            <Header />
+            <Header colorChange={this.colorChange} />
             <Main />
       </div> 
   

@@ -63,7 +63,7 @@ body {
   background-color: #6994BB;
 }
 
-.header-heart {
+#heartBtn {
   width: 14vw;
   height: 8vh;
   background-color: #C2BB7C;
