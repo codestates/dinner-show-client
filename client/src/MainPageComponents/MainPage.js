@@ -6,7 +6,7 @@ import Main from "./Main";
 import axios from "axios";
 import TrendingList from "./TrendingList";
 import NewList from "./NewList";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Router } from "react-router-dom";
 
 class MainPage extends Component {
   constructor(props) {
@@ -59,8 +59,7 @@ class MainPage extends Component {
         //! 일반 함수에서 화살표 함수로 리팩터해줬더니 디버깅이 되었다. this가 문제였다.
         this.setState({
           data: res,
-          isOn: true,
-          ret,
+          contentsList: ret,
           trendingList: trendList,
           newList: newList,
         });
@@ -166,38 +165,51 @@ class MainPage extends Component {
     // console.log(this.state.data);
 
     return (
-      <div className="container">
-        <Router>
-          <Switch>
-            <Route
-              path="/newList"
-              component={NewList}
-              render={() =>
-                this.state.newList ? (
-                  this.state.newList.map((content) => {
-                    return <NewList content={content} key={content.id} />;
-                  })
-                ) : (
-                  <div>Loding</div>
-                )
-              }
-            />
+      // <Switch>
+      //   <Route>
 
-            <Route
-              path="/trendingList"
-              component={TrendingList}
-              render={() =>
-                this.state.trendingList ? (
-                  this.state.trendingList.map((content) => {
-                    return <TrendingList content={content} key={content.id} />;
-                  })
-                ) : (
-                  <div>Loding</div>
-                )
-              }
-            />
-          </Switch>
-        </Router>
+      //   </Route>
+      // </Switch>
+
+      <div className="container">
+        <Nav />
+        <Header data={this.state.data} getSearchData={this.getSearchData} />
+
+        {/* ====================================Main=====================================!*/}
+        {/* {
+            this.state.contentsList ? (
+              this.state.contentsList.map((content) => {
+                return <Main content={content} key={content.id} />;
+              })
+            ) : (
+              <div>Loding</div>
+            )
+            // <LodingIndicator />
+          } */}
+
+        {/* ====================================trendingList=====================================!*/}
+        {
+          this.state.trendingList ? (
+            this.state.trendingList.map((content) => {
+              return <TrendingList content={content} key={content.id} />;
+            })
+          ) : (
+            <div>Loding</div>
+          )
+          // <LodingIndicator />
+        }
+
+        {/* ====================================newList=====================================!*/}
+        {
+          this.state.newList ? (
+            this.state.newList.map((content) => {
+              return <NewList content={content} key={content.id} />;
+            })
+          ) : (
+            <div>Loding</div>
+          )
+          // <LodingIndicator />
+        }
       </div>
     );
   }
