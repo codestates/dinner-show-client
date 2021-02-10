@@ -76,13 +76,14 @@ body {
 .mains {
   display: inline-block;
   border: 1px solid darkmagenta ;
-  max-width: 30vh;
-  min-height: 30vh;
-  margin-top: 5%;
+  /* max-width: 30vh; */
+  /* min-height: 30vh; */
+  /* margin-top: 5%;
   margin-left: 2%;
-  margin-top: 2%;
+  margin-top: 2%; */
   background-color: #d1b0b0;
   width: 30%;  
+  height: 10px;
 }
 
 .main-section {
