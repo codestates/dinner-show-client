@@ -35,8 +35,12 @@ class Main extends Component {
 
   getSearchData() {
     axios
-      // .get("http://13.209.89.239:5000/contents")
-      .get("http://localhost:5000/contents")
+      .get("https://api.dinnershow.org/contents", {
+        headers: {
+          withCredential: true,
+        },
+      })
+      //
       .then(function (response) {
         // console.log(response.data.data[0]);
         // console.log(response.data.data);
@@ -173,31 +177,25 @@ class Main extends Component {
       <div className="parent">
         <MainHeader data={this.state.data} getSearchData={this.getSearchData} handleClick={this.handleClick} isBntOn={this.state.isBntOn} /> 
         <div className="container">
-
           {/* ====================================trendingList=====================================!*/}
-          {
-            this.state.trendingList ? (
-              this.state.trendingList.map((content) => {
-                return <TrendList content={content} key={content.id} />;
-              })
-            ) : (
-              <div>Loding</div>
-            )
-          }
+          {this.state.trendingList ? (
+            this.state.trendingList.map((content) => {
+              return <TrendList content={content} key={content.id} />;
+            })
+          ) : (
+            <div>Loding</div>
+          )}
         </div>
 
         <div className="container">
           {/* ====================================newList=====================================!*/}
-          {
-            this.state.newList ? (
-              this.state.newList.map((content) => {
-                return <NewList content={content} key={content.id} />
-              })
-            ) : (
-              <div>Loding</div>
-            )
-          }
-          
+          {this.state.newList ? (
+            this.state.newList.map((content) => {
+              return <NewList content={content} key={content.id} />;
+            })
+          ) : (
+            <div>Loding</div>
+          )}
         </div>
       </div>
     );
