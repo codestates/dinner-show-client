@@ -17,10 +17,11 @@ class Main extends Component {
       contentsList: [],
       trendingList: [],
       newList: [],
-      inOn: false,
+      isBntOn: false,
     };
     this.getSearchData = this.getSearchData.bind(this); // 이게 역할이 뭐였더라?
     this.onscroll = this.onscroll.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -160,12 +161,21 @@ class Main extends Component {
     }
   }
 
+  handleClick() {
+    console.log("1",this.state.isBntOn)
+    this.setState(prevState => ({
+      isBntOn: !prevState.isBntOn
+    }));
+    console.log("2", this.state.isBntOn)
+  }
+
+
   render() {
     // console.log(this.state.data);
 
     return (
       <div className="parent">
-        <MainHeader data={this.state.data} getSearchData={this.getSearchData} />
+        <MainHeader data={this.state.data} getSearchData={this.getSearchData} handleClick={this.handleClick} isBntOn={this.state.isBntOn} /> 
         <div className="container">
           {/* ====================================trendingList=====================================!*/}
           {this.state.trendingList ? (
