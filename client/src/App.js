@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
 import Headers from "./components/Headers";
-import MainHeaders from "./components/MainHeader";
-import Login from "./routes/Login";
-import NewContents from "./routes/NewContent";
-import Search from "./routes/Search";
-import Toggle from "./routes/Toggle";
-import Main from "./components/Main";
-import Trend from "./routes/Trend";
 import NoMatch from "./routes/NoMatch";
+import Login from "./routes/Login";
+import Main from "./components/Main";
 import axios from "axios";
-import MainHeader from "./components/MainHeader";
+// import MainHeaders from "./components/MainHeader";
+// import NewContents from "./routes/NewContent";
+// import Search from "./routes/Search";
+// import Toggle from "./routes/Toggle";
+// import Trend from "./routes/Trend";
 
 class App extends Component {
   constructor(props) {
@@ -288,9 +287,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/"render={() => <Main data={this.state.data} getTrendData={this.getTrendData} getNewData={this.getNewData} trendHandleClick={this.trendHandleClick} 
             newHandleClick={this.newHandleClick} trendingList={this.state.trendingList} newList={this.state.newList} isTbntOn={this.state.isTbntOn} isNbntOn={this.state.isNbntOn} /> }/>
-            <Route path="/newcontent" component={NewContents} />
-            <Route path="/search" component={Search} />
-            <Route path="/toggle" component={Toggle} />
+            {/* <Route path="/newcontent" component={NewContents} /> */}
+            {/* <Route path="/search" component={Search} /> */}
+            {/* <Route path="/toggle" component={Toggle} /> */}
             <Route path="/login" render={() => ( <Login successLogin={this.successLogin.bind(this)} googleLogin={this.googleLogin.bind(this)} />)}/>
             <Route component={NoMatch} />
           </Switch>
