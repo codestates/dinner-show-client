@@ -1,6 +1,7 @@
 import React from "react";
 
 const TrendList = ({ content }) => {
+  // console.log(content)
   return (
     <div className="mains">
       {

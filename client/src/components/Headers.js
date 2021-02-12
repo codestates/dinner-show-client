@@ -20,6 +20,9 @@ const Headers = () => {
       <NavLink to="/toggle" className="item" activeClassName="active">
         토글
       </NavLink>
+      {/* <NavLink to="/main" className="item" activeClassName="active">
+        메인
+      </NavLink> */}
     </div>
   );
 };
