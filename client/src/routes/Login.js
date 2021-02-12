@@ -2,29 +2,33 @@ import React, { useState } from "react";
 import GoogleBtn from "../components/GoogleBtn";
 import "./Login.css";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
+import Headers from "../components/Headers";
 
-const Login = () => {
+const Login = (props) => {
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
+  // const [accessToken, setAccessToken] = useState("");
 
   const handleSubmit = (e) => {
-    console.log("ok");
     e.preventDefault();
     axios
       .post(
-        "https://api.dinnershow.org/users/login",
+        "http://localhost:5000/users/login",
         { email: inputEmail, password: inputPassword },
-        { "Content-Type": "application/json", withCredentials: true }
+        { "Content-Type": "application/json" }
       )
       .then((json) => {
-        console.log("ok2");
-        console.log(json);
+        if (json.data.message !== "not Authorized") {
+          props.successLogin(json.data.data.accessToken);
+        }
         setInputEmail("");
         setInputPassword("");
       });
   };
   return (
     <div id="parent-container">
+      <Headers />
       <div id="container">
         <form className="login" onSubmit={handleSubmit}>
           <div className="login_input">
@@ -54,7 +58,7 @@ const Login = () => {
         <div className="oauth_singup_container">
           <div id="socialLogin">
             <span>구글 계정으로 로그인</span>
-            <GoogleBtn />
+            <GoogleBtn googleLogin={props.googleLogin} />
           </div>
 
           <div id="userSignup">
@@ -67,4 +71,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withRouter(Login);
