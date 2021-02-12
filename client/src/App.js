@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import Home from "./routes/Home";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
 import Headers from "./components/Headers";
 import MainHeaders from "./components/MainHeader";
 import Login from "./routes/Login";
@@ -16,7 +16,7 @@ import NoMatch from "./routes/NoMatch";
 import axios from "axios";
 import MainHeader from "./components/MainHeader";
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,6 +31,7 @@ export default class App extends Component {
       newList: [],
       isTbntOn: false,
       isNbntOn: false,
+      userInfo: { imageUrl: null },
     }
     this.getTrendData = this.getTrendData.bind(this); // 이게 역할이 뭐였더라?
     this.getNewData = this.getNewData.bind(this); // 이게 역할이 뭐였더라?
@@ -42,6 +43,37 @@ export default class App extends Component {
     this.getTrendData = this.getTrendData.bind(this);
   }
 
+    googleLogin = (profileByGoogle) => {
+    this.setState({
+      isLogin: true,
+      userInfo: profileByGoogle,
+    });
+    console.log(this.state.userInfo);
+    this.props.history.push("/");
+  };
+
+  successLogin = (accessToken) => {
+    axios
+      .get("http://localhost:5000/accesstokenrequest", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      })
+      .then((json) => {
+        this.setState({
+          isLogin: true,
+          accessToken: accessToken,
+          userInfo: { imageUrl: null, ...json.data.data },
+        });
+      })
+      .then(() => {
+        console.log(this.state);
+        this.props.history.push("/");
+      });
+  };
+  
   componentDidMount() {
     // this.getSearchData(); //! 해제시, 랜딩페이지에 글목록이 떠있음
     window.addEventListener("scroll", this.onscrollForTbtn);
@@ -259,11 +291,12 @@ export default class App extends Component {
         <div>
           <Switch>
             <Route exact path="/"render={() => <Main data={this.state.data} getTrendData={this.getTrendData} getNewData={this.getNewData} trendHandleClick={this.trendHandleClick} 
-            newHandleClick={this.newHandleClick} trendingList={this.state.trendingList} newList={this.state.newList} isTbntOn={this.state.isTbntOn} isNbntOn={this.state.isNbntOn} /> }/>
+            newHandleClick={this.newHandleClick} trendingList={this.state.trendingList} newList={this.state.newList} isTbntOn={this.state.isTbntOn} isNbntOn={this.state.isNbntOn} 
+            isLogin={this.state.isLogin}  profile={this.state.userInfo}/> }/>
             <Route path="/newcontent" component={NewContents} />
             <Route path="/search" component={Search} />
             <Route path="/toggle" component={Toggle} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" render={() => ( <Login successLogin={this.successLogin.bind(this)} googleLogin={this.googleLogin.bind(this)} />)}/>
             <Route component={NoMatch} />
           </Switch>
         </div>
@@ -271,3 +304,5 @@ export default class App extends Component {
     );  
   }
 };
+
+export default withRouter(App);

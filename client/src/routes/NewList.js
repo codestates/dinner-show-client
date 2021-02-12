@@ -8,7 +8,6 @@ const NewList = ({ content }) => {
           {content.id}.{content.title}
         </section>
       }
-
     </div>
   );
 };
