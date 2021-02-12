@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Home from "./routes/Home";
 import { BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
 import Headers from "./components/Headers";
 import MainHeaders from "./components/MainHeader";
@@ -9,9 +8,6 @@ import Search from "./routes/Search";
 import Toggle from "./routes/Toggle";
 import Main from "./components/Main";
 import Trend from "./routes/Trend";
-// import TrendList from "./routes/TrendList";
-// import New from "./routes/New";
-// import NewList from "./routes/NewList";
 import NoMatch from "./routes/NoMatch";
 import axios from "axios";
 import MainHeader from "./components/MainHeader";

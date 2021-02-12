@@ -5,8 +5,8 @@ import Headers from "../components/Headers";
 const NewContents = () => {
   return (
     <>
-      <Headers />
-      <div>새글작성</div>;
+      {/* <Headers /> */}
+      <div>새글작성</div>
     </>
   );
 };

@@ -28,7 +28,7 @@ const Login = (props) => {
   };
   return (
     <div id="parent-container">
-      <Headers />
+      {/* <Headers /> */}
       <div id="container">
         <form className="login" onSubmit={handleSubmit}>
           <div className="login_input">
