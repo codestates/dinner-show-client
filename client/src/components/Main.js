@@ -4,32 +4,49 @@ import Headers from "./Headers";
 import TrendList from "../routes/TrendList";
 import NewList from "../routes/NewList";
 import "./Main.css";
+import { initialState } from "../asset/state";
 
-const Main = ({data, getTrendData, getNewData, trendingList, newList, trendHandleClick, newHandleClick, isTbntOn, isNbntOn }) => {
-    return (
+const Main = ({
+  data,
+  getTrendData,
+  getNewData,
+  trendingList,
+  newList,
+  trendHandleClick,
+  newHandleClick,
+  isTbntOn,
+  isNbntOn,
+}) => {
+  return (
     <div className="parent">
-      <MainHeader data={data} getTrendData={getTrendData} getNewData={getNewData} isTbntOn={isTbntOn} isNbntOn={isNbntOn} /> 
+      <MainHeader
+        data={data}
+        getTrendData={getTrendData}
+        getNewData={getNewData}
+        isTbntOn={isTbntOn}
+        isNbntOn={isNbntOn}
+      />
 
-{/* ====================================trendingList=====================================!*/}
+      {/* ====================================trendingList=====================================!*/}
       <div className="container">
-        {
-        isTbntOn ? (
+        {isTbntOn ? (
           trendingList.map((content) => {
             return <TrendList content={content} key={content.id} />;
           })
-        ) : ( <div></div> )
-        }
-{/* ====================================newList=====================================!*/}
-      {
-        isNbntOn ? (
+        ) : (
+          <div></div>
+        )}
+        {/* ====================================newList=====================================!*/}
+        {isNbntOn ? (
           newList.map((content) => {
-            return <NewList content={content} key={content.id} />
+            return <NewList content={content} key={content.id} />;
           })
-        ) : ( <div></div> )
-      }
+        ) : (
+          <div></div>
+        )}
+      </div>
     </div>
-  </div>
   );
 };
 
-  export default Main;
+export default Main;
