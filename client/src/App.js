@@ -23,7 +23,7 @@ class App extends Component {
       isLogin: false,
       accessToken: null,
       userInfo:"",
-      data: 123,
+      data: null,
       preItems: 0,
       items: 10,
       contentsList: [],
@@ -286,13 +286,12 @@ class App extends Component {
     
     return (
       <Router>
-      <Headers />
+      <Headers isLogin={this.state.isLogin}  profile={this.state.userInfo} />
       {/* <MainHeaders />  */}
         <div>
           <Switch>
             <Route exact path="/"render={() => <Main data={this.state.data} getTrendData={this.getTrendData} getNewData={this.getNewData} trendHandleClick={this.trendHandleClick} 
-            newHandleClick={this.newHandleClick} trendingList={this.state.trendingList} newList={this.state.newList} isTbntOn={this.state.isTbntOn} isNbntOn={this.state.isNbntOn} 
-            isLogin={this.state.isLogin}  profile={this.state.userInfo}/> }/>
+            newHandleClick={this.newHandleClick} trendingList={this.state.trendingList} newList={this.state.newList} isTbntOn={this.state.isTbntOn} isNbntOn={this.state.isNbntOn} /> }/>
             <Route path="/newcontent" component={NewContents} />
             <Route path="/search" component={Search} />
             <Route path="/toggle" component={Toggle} />
