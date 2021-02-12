@@ -9,7 +9,6 @@ const Main = ({data, getTrendData, getNewData, trendingList, newList, trendHandl
     return (
     <div className="parent">
       <MainHeader data={data} getTrendData={getTrendData} getNewData={getNewData} isTbntOn={isTbntOn} isNbntOn={isNbntOn} /> 
-      {/* <Headers isLogin={isLogin} profile={profile} /> */}
 
 {/* ====================================trendingList=====================================!*/}
       <div className="container">
