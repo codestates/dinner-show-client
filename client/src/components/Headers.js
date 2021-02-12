@@ -27,6 +27,12 @@ const Headers = (props) => {
       <NavLink to="/search" className="item" activeClassName="active">
         검색
       </NavLink>
+      <NavLink to="/toggle" className="item" activeClassName="active">
+        토글
+      </NavLink>
+      {/* <NavLink to="/main" className="item" activeClassName="active">
+        메인
+      </NavLink> */}
       {props.isLogin ? (
         <div>
           <img

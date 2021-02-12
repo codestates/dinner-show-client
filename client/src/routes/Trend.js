@@ -1,9 +1,10 @@
 import React from "react";
 
-const Trend = (props) => {
+const Trend = ({isTbntOn, data, getTrendData, content}) => {
+  // console.log(isTbntOn, handleClick)
   return (
     <div className="MainHeader">
-      <button onClick={props.getSearchData} className="header header-trend">
+      <button onClick={getTrendData} className="header header-trend">
         트렌드
       </button>
     </div>
