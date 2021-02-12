@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import MainHeader from "./MainHeader";
+import Headers from "./Headers";
 import TrendList from "../routes/TrendList";
 import NewList from "../routes/NewList";
 import "./Main.css";
 
-const Main = ({data, getTrendData, getNewData, trendingList, newList, trendHandleClick, newHandleClick, isTbntOn, isNbntOn}) => {
+const Main = ({data, getTrendData, getNewData, trendingList, newList, trendHandleClick, newHandleClick, isTbntOn, isNbntOn }) => {
     return (
     <div className="parent">
       <MainHeader data={data} getTrendData={getTrendData} getNewData={getNewData} isTbntOn={isTbntOn} isNbntOn={isNbntOn} /> 
-      //! <Headers isLogin={this.props.isLogin} profile={this.props.profile} />
+      {/* <Headers isLogin={isLogin} profile={profile} /> */}
 
 {/* ====================================trendingList=====================================!*/}
       <div className="container">
