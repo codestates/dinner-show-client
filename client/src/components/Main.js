@@ -35,7 +35,7 @@ class Main extends Component {
 
   getSearchData() {
     axios
-      .get("https://api.dinnershow.org/contents", {
+      .get("http://localhost:5000/contents", {
         headers: {
           withCredential: true,
         },
@@ -162,20 +162,25 @@ class Main extends Component {
   }
 
   handleClick() {
-    console.log("1",this.state.isBntOn)
-    this.setState(prevState => ({
-      isBntOn: !prevState.isBntOn
+    console.log("1", this.state.isBntOn);
+    this.setState((prevState) => ({
+      isBntOn: !prevState.isBntOn,
     }));
-    console.log("2", this.state.isBntOn)
+    console.log("2", this.state.isBntOn);
   }
-
 
   render() {
     // console.log(this.state.data);
 
     return (
       <div className="parent">
-        <MainHeader data={this.state.data} getSearchData={this.getSearchData} handleClick={this.handleClick} isBntOn={this.state.isBntOn} /> 
+        <Headers isLogin={this.props.isLogin} profile={this.props.profile} />
+        <MainHeader
+          data={this.state.data}
+          getSearchData={this.getSearchData}
+          handleClick={this.handleClick}
+          isBntOn={this.state.isBntOn}
+        />
         <div className="container">
           {/* ====================================trendingList=====================================!*/}
           {this.state.trendingList ? (

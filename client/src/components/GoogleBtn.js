@@ -27,6 +27,7 @@ class GoogleBtn extends Component {
         profile: response.profileObj,
       }));
     }
+    this.props.googleLogin(response.profileObj);
   }
 
   logout(response) {
