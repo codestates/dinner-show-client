@@ -1,6 +1,6 @@
 import React from "react";
 
-const Trend = ({isTbntOn, data, getTrendData, content}) => {
+const Trend = ({ isTbntOn, data, getTrendData, content }) => {
   // console.log(isTbntOn, handleClick)
   return (
     <div className="MainHeader">
