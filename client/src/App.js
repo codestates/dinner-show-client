@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  withRouter,
+} from "react-router-dom";
 import Headers from "./components/Headers";
 import NoMatch from "./routes/NoMatch";
 import Login from "./routes/Login";
@@ -17,7 +22,7 @@ class App extends Component {
     this.state = {
       isLogin: false,
       accessToken: null,
-      userInfo:"",
+      userInfo: "",
       data: null,
       preItems: 0,
       items: 10,
@@ -26,8 +31,8 @@ class App extends Component {
       newList: [],
       isTbntOn: false,
       isNbntOn: false,
-      userInfo: { imageUrl: null },
-    }
+      userInfo: {},
+    };
     this.getTrendData = this.getTrendData.bind(this); // 이게 역할이 뭐였더라?
     this.getNewData = this.getNewData.bind(this); // 이게 역할이 뭐였더라?
     this.onscrollForTbtn = this.onscrollForTbtn.bind(this);
@@ -39,9 +44,13 @@ class App extends Component {
   }
 
   googleLogin = (profileByGoogle) => {
+    console.log(profileByGoogle);
     this.setState({
       isLogin: true,
-      userInfo: profileByGoogle,
+      userInfo: {
+        imageUrl: profileByGoogle.imageUrl,
+        name: profileByGoogle.name,
+      },
     });
     console.log(this.state.userInfo);
     this.props.history.push("/");
@@ -60,20 +69,22 @@ class App extends Component {
         this.setState({
           isLogin: true,
           accessToken: accessToken,
-          userInfo: { imageUrl: null, ...json.data.data },
+          userInfo: {
+            imageUrl: null,
+            name: json.data.data.full_name,
+          },
         });
       })
       .then(() => {
-        console.log(this.state);
+        console.log(this.props.history);
         this.props.history.push("/");
       });
   };
-  
+
   componentDidMount() {
     // this.getSearchData(); //! 해제시, 랜딩페이지에 글목록이 떠있음
     window.addEventListener("scroll", this.onscrollForTbtn);
     window.addEventListener("scroll", this.onscrollForNbtn);
-
   }
 
   componentWillUnmount() {
@@ -140,7 +151,7 @@ class App extends Component {
           trendingList: trendList,
           // newList: newList,
         });
-        
+
         this.trendHandleClick();
         // this.newHandleClick();
         console.log("t: ", this.state.trendingList);
@@ -177,7 +188,7 @@ class App extends Component {
           // trendingList: trendList,
           newList: newList,
         });
-        
+
         // this.trendHandleClick();
         this.newHandleClick();
         // console.log("t: ", this.state.trendingList);
@@ -194,8 +205,7 @@ class App extends Component {
       // console.log(this.state.items)
       this.setState({ items: items + 10 });
 
-      this.state.isTbntOn ? 
-      this.getTrendData() : <></> 
+      this.state.isTbntOn ? this.getTrendData() : <></>;
     }
   };
 
@@ -205,8 +215,7 @@ class App extends Component {
       // console.log(this.state.items)
       this.setState({ items: items + 10 });
 
-      this.state.isNbntOn ? 
-      this.getNewData() : <></>
+      this.state.isNbntOn ? this.getNewData() : <></>;
     }
   };
 
@@ -290,24 +299,43 @@ class App extends Component {
       return tList.concat(temp);
     }
   }
+
+  logoutHandler = async () => {
+    if (this.state.isLogin) {
+      this.setState({
+        isLogin: false,
+        userInfo: {},
+        accessToken: null,
+      });
+      await axios.post(
+        "http://localhost:5000/users/logout",
+        {},
+        {
+          withCredentials: true,
+        }
+      );
+    }
+    this.props.history.push("/");
+  };
+
   render() {
-    // console.log(this.state.data);
-    
     return (
       <div>
-        <Headers isLogin={this.state.isLogin}  profile={this.state.userInfo} />
-          <Switch>
-            <Route exact path="/"render={() => <Main data={this.state.data} getTrendData={this.getTrendData} getNewData={this.getNewData} trendHandleClick={this.trendHandleClick} 
-            newHandleClick={this.newHandleClick} trendingList={this.state.trendingList} newList={this.state.newList} isTbntOn={this.state.isTbntOn} isNbntOn={this.state.isNbntOn} /> }/>
-            {/* <Route path="/newcontent" component={NewContents} /> */}
-            {/* <Route path="/search" component={Search} /> */}
-            {/* <Route path="/toggle" component={Toggle} /> */}
-            <Route path="/login" render={() => ( <Login successLogin={this.successLogin.bind(this)} googleLogin={this.googleLogin.bind(this)} />)}/>
-            <Route component={NoMatch} />
-          </Switch>
-        </div>
-    );  
+        <Headers isLogin={this.state.isLogin} profile={this.state.userInfo} logoutHandler={this.logoutHandler} />
+        <Switch>
+          <Route exact path="/" render={() => (
+              <Main data={this.state.data} getTrendData={this.getTrendData} getNewData={this.getNewData} trendHandleClick={this.trendHandleClick}
+                newHandleClick={this.newHandleClick} trendingList={this.state.trendingList} newList={this.state.newList} isTbntOn={this.state.isTbntOn}
+                isNbntOn={this.state.isNbntOn} />)}/>
+      
+          <Route path="/login" render={() => this.state.isLogin ? ( this.props.history.push("/") ) : ( <Login successLogin={this.successLogin.bind(this)}
+                  googleLogin={this.googleLogin.bind(this)} />)}/>
+
+          <Route component={NoMatch} />
+        </Switch>
+      </div>
+    );
   }
-};
+}
 
 export default withRouter(App);
