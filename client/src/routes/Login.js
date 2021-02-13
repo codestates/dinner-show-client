@@ -11,6 +11,21 @@ const Login = (props) => {
   // const [accessToken, setAccessToken] = useState("");
 
   const handleSubmit = (e) => {
+    // e.preventDefault();
+    // axios
+    //   .post(
+    //     "http://localhost:5000/users/login",
+    //     { email: inputEmail, password: inputPassword },
+    //     { "Content-Type": "application/json" }
+    //   )
+    //   .then((json) => {
+    //     if (json.data.message !== "not Authorized") {
+    //       console.log(e);
+    //       props.successLogin(json.data.data.accessToken);
+    //     }
+    //     setInputEmail("");
+    //     setInputPassword("");
+    //   });
     e.preventDefault();
     axios
       .post(
