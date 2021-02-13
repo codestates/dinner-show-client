@@ -14,6 +14,7 @@ const Headers = (props) => {
     return "https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/436/8142f53e51d2ec31bc0fa4bec241a919_crop.jpeg";
   };
   return (
+
     <div className="header">
       <NavLink id="logo" to="/">
         디너쇼

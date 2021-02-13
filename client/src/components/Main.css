@@ -15,12 +15,6 @@ body {
   body {
     /* background-color: rgb(159, 189, 78); */
   }
-  .MainHeader {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    width: 50%;
-    height: 50%;
-  }
 }
 .MainHeader {
   margin-left: 20px;
@@ -137,3 +131,4 @@ body {
   display: flex;
   justify-content: space-between;
 }
+

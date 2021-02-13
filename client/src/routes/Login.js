@@ -80,8 +80,8 @@ const Login = (props) => {
             <GoogleBtn googleLogin={props.googleLogin} />
           </div>
 
-          <div id="userSignup">
-            <span>아직 회원이 아니신가요?</span>
+          <div id="signupContainer">
+            <div>아직 회원이 아니신가요?</div>
             <button id="signupBtn">회원가입</button>
           </div>
         </div>
