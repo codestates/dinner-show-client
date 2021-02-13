@@ -44,7 +44,6 @@ class App extends Component {
   }
 
   googleLogin = (profileByGoogle) => {
-    console.log(profileByGoogle);
     this.setState({
       isLogin: true,
       userInfo: {
@@ -93,36 +92,36 @@ class App extends Component {
   }
 
   trendHandleClick() {
-    console.log("1",this.state.isTbntOn, this.state.isNbntOn)
+    console.log("1", this.state.isTbntOn, this.state.isNbntOn);
 
-    if(this.state.isNbntOn) {
-      this.setState(prevState => ({
+    if (this.state.isNbntOn) {
+      this.setState((prevState) => ({
         isTbntOn: !prevState.isTbntOn,
-        isNbntOn: !prevState.isNbntOn
+        isNbntOn: !prevState.isNbntOn,
       }));
     } else {
-      this.setState(prevState => ({
+      this.setState((prevState) => ({
         isTbntOn: !prevState.isTbntOn,
       }));
     }
 
-    console.log("2", this.state.isTbntOn, this.state.isNbntOn)
+    console.log("2", this.state.isTbntOn, this.state.isNbntOn);
   }
 
   newHandleClick() {
-    console.log("1",this.state.isTbntOn, this.state.isNbntOn)
-    if(this.state.isTbntOn) {
-      this.setState(prevState => ({
+    console.log("1", this.state.isTbntOn, this.state.isNbntOn);
+    if (this.state.isTbntOn) {
+      this.setState((prevState) => ({
         isTbntOn: !prevState.isTbntOn,
-        isNbntOn: !prevState.isNbntOn
+        isNbntOn: !prevState.isNbntOn,
       }));
     } else {
-      this.setState(prevState => ({
+      this.setState((prevState) => ({
         isNbntOn: !prevState.isNbntOn,
       }));
     }
 
-    console.log("2-1", this.state.isTbntOn, this.state.isNbntOn)
+    console.log("2-1", this.state.isTbntOn, this.state.isNbntOn);
   }
 
   getTrendData() {
@@ -321,15 +320,43 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Headers isLogin={this.state.isLogin} profile={this.state.userInfo} logoutHandler={this.logoutHandler} />
+        <Headers
+          isLogin={this.state.isLogin}
+          profile={this.state.userInfo}
+          logoutHandler={this.logoutHandler}
+        />
         <Switch>
-          <Route exact path="/" render={() => (
-              <Main data={this.state.data} getTrendData={this.getTrendData} getNewData={this.getNewData} trendHandleClick={this.trendHandleClick}
-                newHandleClick={this.newHandleClick} trendingList={this.state.trendingList} newList={this.state.newList} isTbntOn={this.state.isTbntOn}
-                isNbntOn={this.state.isNbntOn} />)}/>
-      
-          <Route path="/login" render={() => this.state.isLogin ? ( this.props.history.push("/") ) : ( <Login successLogin={this.successLogin.bind(this)}
-                  googleLogin={this.googleLogin.bind(this)} />)}/>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Main
+                data={this.state.data}
+                getTrendData={this.getTrendData}
+                getNewData={this.getNewData}
+                trendHandleClick={this.trendHandleClick}
+                newHandleClick={this.newHandleClick}
+                trendingList={this.state.trendingList}
+                newList={this.state.newList}
+                isTbntOn={this.state.isTbntOn}
+                isNbntOn={this.state.isNbntOn}
+              />
+            )}
+          />
+
+          <Route
+            path="/login"
+            render={() =>
+              this.state.isLogin ? (
+                this.props.history.push("/")
+              ) : (
+                <Login
+                  successLogin={this.successLogin.bind(this)}
+                  googleLogin={this.googleLogin.bind(this)}
+                />
+              )
+            }
+          />
 
           <Route component={NoMatch} />
         </Switch>

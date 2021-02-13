@@ -36,7 +36,6 @@ const Main = ({
         ) : (
           <div></div>
         )}
-        {/* ====================================newList=====================================!*/}
         {isNbntOn ? (
           newList.map((content) => {
             return <NewList content={content} key={content.id} />;
