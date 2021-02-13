@@ -16,10 +16,10 @@
 }
 
 .item:hover {
-  background: #748ffc;
+  /* background: #748ffc; */
+  background: black;
 }
 
-.item:active,
 .item:active {
   background: white;
   color: #5c7cfa;
