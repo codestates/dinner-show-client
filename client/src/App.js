@@ -44,7 +44,6 @@ class App extends Component {
   }
 
   googleLogin = (profileByGoogle) => {
-    console.log(profileByGoogle);
     this.setState({
       isLogin: true,
       userInfo: {
@@ -94,17 +93,34 @@ class App extends Component {
 
   trendHandleClick() {
     console.log("1", this.state.isTbntOn, this.state.isNbntOn);
-    this.setState((prevState) => ({
-      isTbntOn: !prevState.isTbntOn,
-    }));
+
+    if (this.state.isNbntOn) {
+      this.setState((prevState) => ({
+        isTbntOn: !prevState.isTbntOn,
+        isNbntOn: !prevState.isNbntOn,
+      }));
+    } else {
+      this.setState((prevState) => ({
+        isTbntOn: !prevState.isTbntOn,
+      }));
+    }
+
     console.log("2", this.state.isTbntOn, this.state.isNbntOn);
   }
 
   newHandleClick() {
     console.log("1", this.state.isTbntOn, this.state.isNbntOn);
-    this.setState((prevState) => ({
-      isNbntOn: !prevState.isNbntOn,
-    }));
+    if (this.state.isTbntOn) {
+      this.setState((prevState) => ({
+        isTbntOn: !prevState.isTbntOn,
+        isNbntOn: !prevState.isNbntOn,
+      }));
+    } else {
+      this.setState((prevState) => ({
+        isNbntOn: !prevState.isNbntOn,
+      }));
+    }
+
     console.log("2-1", this.state.isTbntOn, this.state.isNbntOn);
   }
 
