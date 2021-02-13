@@ -1,4 +1,4 @@
-export const initalState= {
+export const initialState= {
 items:[
 {
     title:"돼지국밥",

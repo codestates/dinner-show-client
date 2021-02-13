@@ -14,38 +14,14 @@ const Headers = (props) => {
   };
 
   return (
-    <div className="header">
-      <NavLink id="logo" to="/">
-        디너쇼
-      </NavLink>
-      <NavLink exact to="/" id="home" activeClassName="active">
-        홈
-      </NavLink>
-      <NavLink
-        to="/login"
-        id="login"
-        activeClassName="active"
-        onClick={props.logoutHandler}
-      >
-        {props.isLogin ? "로그아웃" : "로그인"}
-      </NavLink>
-      {props.isLogin ? (
-        <div className="loginok">
-          {" "}
-          <img
-            src={img(props)}
-            style={{
-              width: "50px",
-              height: "50px",
-              color: "black",
-              borderRadius: "50%",
-            }}
-          />{" "}
-          <span>{props.profile.name}</span>
-        </div>
-      ) : (
-        ""
-      )}
+
+    <div id="headers">
+        <NavLink id="logo" to="/">디너쇼</NavLink> 
+        <NavLink exact to="/" id="home" activeClassName="active">홈</NavLink>
+        <NavLink to="/login" id="login" activeClassName="active" onClick={props.logoutHandler} >{props.isLogin ? "로그아웃" : "로그인"}</NavLink>
+        {props.isLogin ? 
+        (<div> <img src={img(props)} style={{ width: "35px", height: "35px", marginTop: "10px", borderRadius: "50%", float:"right"}}/>
+         <span style={{  marginTop: "10px",color: "white", float:"right" }}>{props.profile}</span></div>) : ( "" )}
     </div>
   );
 };
