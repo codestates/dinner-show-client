@@ -343,6 +343,7 @@ class App extends Component {
               />
             )}
           />
+
           <Route
             path="/login"
             render={() =>
@@ -356,6 +357,7 @@ class App extends Component {
               )
             }
           />
+
           <Route component={NoMatch} />
         </Switch>
       </div>
