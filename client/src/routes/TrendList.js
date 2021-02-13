@@ -1,6 +1,7 @@
 import React from "react";
 
 const TrendList = ({ content }) => {
+  // console.log(content)
   return (
     <div className="mains">
       {
@@ -8,6 +9,9 @@ const TrendList = ({ content }) => {
           {content.id}.{content.title}
         </section>
       }
+      <div>
+        <img src={content.img} className="img"></img>
+      </div>
     </div>
   );
 };

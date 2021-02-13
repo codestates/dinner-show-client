@@ -28,28 +28,18 @@ const Login = (props) => {
   };
   return (
     <div id="parent-container">
-      <Headers />
+      {/* <Headers /> */}
       <div id="container">
         <form className="login" onSubmit={handleSubmit}>
           <div className="login_input">
-            <input
-              placeholder="EMAIL"
-              class="loginInput"
-              value={inputEmail}
-              onChange={(e) => {
-                setInputEmail(e.target.value);
-              }}
-            />
-            <input
-              type="password"
-              placeholder="PASSWORD"
-              class="loginInput"
-              value={inputPassword}
-              onChange={(e) => {
-                setInputPassword(e.target.value);
-              }}
-            ></input>
+
+            <input placeholder="EMAIL" className="loginInput" value={inputEmail}
+              onChange={(e) => { setInputEmail(e.target.value); }}/>
+
+            <input type="password" placeholder="PASSWORD" className="loginInput" value={inputPassword} 
+              onChange={(e) => { setInputPassword(e.target.value); }}></input>
           </div>
+
           <div>
             <input type="submit" value="LOGIN" id="loginBtn"></input>
           </div>

@@ -4,10 +4,13 @@ const NewList = ({ content }) => {
   return (
     <div className="mains">
       {
-        <section className="main main-section" key={content.id}>
+        <section className="main-section" key={content.id}>
           {content.id}.{content.title}
         </section>
       }
+      <div>
+        <img src={content.img} className="img"></img>
+      </div>
     </div>
   );
 };
