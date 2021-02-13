@@ -290,7 +290,6 @@ class App extends Component {
       return tList.concat(temp);
     }
   }
-
   render() {
     // console.log(this.state.data);
     
