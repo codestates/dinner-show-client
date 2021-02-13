@@ -39,7 +39,7 @@ class App extends Component {
     this.onscrollForNbtn = this.onscrollForNbtn.bind(this);
     this.trendHandleClick = this.trendHandleClick.bind(this);
     this.newHandleClick = this.newHandleClick.bind(this);
-    this.getNewData = this.getNewData.bind(this);
+    // this.getNewData = this.getNewData.bind(this);
     this.getTrendData = this.getTrendData.bind(this);
   }
 
@@ -84,6 +84,7 @@ class App extends Component {
     // this.getSearchData(); //! 해제시, 랜딩페이지에 글목록이 떠있음
     window.addEventListener("scroll", this.onscrollForTbtn);
     window.addEventListener("scroll", this.onscrollForNbtn);
+
   }
 
   componentWillUnmount() {
@@ -131,13 +132,14 @@ class App extends Component {
       .then(function (response) {
         // console.log(response.data.data[0]);
         // console.log(response.data.data);
+        
         return response.data.data;
       })
       .then((res) => {
         //! 이 부분에서 res를 하트순/최신순으로 정렬해주는 함수를 실행 시킨 후에 setState를 한다.
-        let trendList = this.trendingList(res);
+        // let trendList = this.trendingList(res);
         // console.log("t:", trendList);
-        let newList = this.newList(res);
+        // let newList = this.newList(res);
         // console.log("n:", newList);
 
         console.log(this.state.preItems, this.state.items);
@@ -147,11 +149,12 @@ class App extends Component {
         this.setState({
           data: res,
           contentsList: ret,
-          trendingList: trendList,
+          trendingList: ret, //! trendList -> ret
           // newList: newList,
         });
 
         this.trendHandleClick();
+        console.log("ret: ", ret);
         // this.newHandleClick();
         console.log("t: ", this.state.trendingList);
         // console.log("n: ", this.state.newList);
@@ -172,9 +175,9 @@ class App extends Component {
       })
       .then((res) => {
         //! 이 부분에서 res를 하트순/최신순으로 정렬해주는 함수를 실행 시킨 후에 setState를 한다.
-        let trendList = this.trendingList(res);
+        // let trendList = this.trendingList(res);
         // console.log("t:", trendList);
-        let newList = this.newList(res);
+        // let newList = this.newList(res);
         // console.log("n:", newList);
 
         console.log(this.state.preItems, this.state.items);
@@ -185,7 +188,7 @@ class App extends Component {
           data: res,
           contentsList: ret,
           // trendingList: trendList,
-          newList: newList,
+          newList: ret,
         });
 
         // this.trendHandleClick();
@@ -201,20 +204,23 @@ class App extends Component {
   onscrollForTbtn = () => {
     let { items } = this.state;
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      // console.log(this.state.items)
       this.setState({ items: items + 10 });
 
-      this.state.isTbntOn ? this.getTrendData() : <></>;
+      this.getTrendData();
+      // this.state.isTbntOn ? this.getTrendData() : <div>Loading...</div>;
     }
   };
 
   onscrollForNbtn = () => {
     let { items } = this.state;
+    // console.log("215: ",items)
+
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      // console.log(this.state.items)
+      console.log(window.innerHeight + window.scrollY >= document.body.offsetHeight)
       this.setState({ items: items + 10 });
 
-      this.state.isNbntOn ? this.getNewData() : <></>;
+      this.getNewData();
+      // this.state.isNbntOn ? this.getNewData() : <div>Loading...</div>;
     }
   };
 

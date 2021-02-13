@@ -1,5 +1,4 @@
 import React from "react";
-
 const TrendList = ({ content }) => {
   // console.log(content)
   return (
@@ -12,7 +11,7 @@ const TrendList = ({ content }) => {
           consequuntur consequatur reiciendis. Cupiditate laboriosam
           perspiciatis suscipit, alias dolorem est similique!
         </div>
-        <div className="date">2020-20-20</div>
+        <div className="date">Created At 2020-20-20</div>
         <div className="infoContainer">
           <span className="nameInfo">by 승익</span>
           <span className="heartInfo">30</span>
@@ -21,5 +20,4 @@ const TrendList = ({ content }) => {
     </div>
   );
 };
-
 export default TrendList;

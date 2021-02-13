@@ -2,7 +2,6 @@
   font-family: sans-serif;
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -13,10 +12,9 @@ body {
     /* font-size: 100px; */
   }
   body {
-    /* background-color: rgb(159, 189, 78) */
+    background-color: rgb(159, 189, 78);
   }
 }
-
 .MainHeader {
   height: 5vh;
   display: flex;
@@ -46,11 +44,10 @@ body {
   background: white;
   color: black;
 }
-
 .header-new:focus {
   color: black;
   border-bottom: 1.5px solid black;
-  
+}
 .header {
   width: 100%;
   height: 100%;
@@ -62,13 +59,17 @@ body {
   display: table;
   table-layout: fixed;
 }
-
 .header-trend {
-  min-height: 15vh;
-  margin-top: 5%;
-
+  border: 0;
+  outline: 0;
+  border-color: white;
+  min-height: 5vh;
+  margin-top: 10%;
   width: 100%;
-  background-color: rgb(131, 141, 131);
+  background-color: white;
+  color: grey;
+  font-size: 1.1rem;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 .header-new {
   border: 0;
@@ -82,52 +83,50 @@ body {
   font-size: 1.1rem;
   font-family: "Lucida Console", "Courier New", monospace;
 }
-  
 .header-new:active {
   background: white;
   color: black;
-  // background-color: rgb(131, 141, 131);
+  background-color: rgb(131, 141, 131);
 }
-
 /* / list/ */
+.parent {
+  background-color: rgb(177, 168, 168);
+  width: 100%;
+}
 .container {
   margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-  
 .mains {
-  display: inline-block;
-  border: 1px solid darkmagenta;
-  background-color: #d1b0b0;
-  width: 30%;
-  height: 10px;
-  border-radius: 25px;
-  // background-color: rgb(177, 168, 168);
-  /* flex: 0 1 150px; */
+  background-color: rgb(177, 168, 168);
 }
-  
+.mains:hover {
+  transform: translateY(-10px);
+}
 .main-section {
   margin: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 2px 3px 0.5px 0.5px;
   border: none;
   background-color: rgb(218, 214, 214);
   text-align: center;
   width: 320px;
 }
-  
 .img {
   object-fit: fill;
   width: 320px;
   height: 180px;
 }
-
 .date {
+  border-top: 0.1px solid rgb(199, 195, 195);
   text-align: left;
+  padding: 10px 15px 5px 15px;
 }
-  
 .infoContainer {
+  border-top: 1px solid rgb(199, 195, 195);
+  padding: 10px;
   display: flex;
   justify-content: space-between;
 }
-
