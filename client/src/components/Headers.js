@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Headers.css";
 import MainLogo from "../img/logo.png";
-
 const Headers = (props) => {
   const img = (props) => {
     if (props.profile) {
@@ -12,8 +11,8 @@ const Headers = (props) => {
     }
     return "https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/436/8142f53e51d2ec31bc0fa4bec241a919_crop.jpeg";
   };
-
   return (
+
 
     <div id="headers">
         <NavLink id="logo" to="/">디너쇼</NavLink> 
@@ -22,12 +21,11 @@ const Headers = (props) => {
         {props.isLogin ? 
         (<div> <img src={img(props)} style={{ width: "35px", height: "35px", marginTop: "10px", borderRadius: "50%", float:"right"}}/>
          <span style={{  marginTop: "10px",color: "white", float:"right" }}>{props.profile}</span></div>) : ( "" )}
+
     </div>
   );
 };
-
 export default Headers;
-
 {
   /* <NavLink to="/newcontent" className="item" activeClassName="active">
   새글작성

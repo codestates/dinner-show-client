@@ -23,4 +23,6 @@ const TrendList = ({ content }) => {
     </div>
   );
 };
+
 export default TrendList;
+
