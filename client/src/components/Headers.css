@@ -1,19 +1,12 @@
 * {
   font-family: sans-serif;
+  box-sizing: border;
 }
-
 .header {
   width: 100%;
   height: 100%;
-  min-width: 300px;
-  padding: 0 24px;
-  position: relative;
-  /* background: #3c3c3c; */
   background: black;
-  z-index: 1001;
-  display: table;
-  table-layout: fixed;
-} 
+}
 
 .header-menu {
   display: inline-flex;
@@ -21,7 +14,6 @@
   height: 100%;
   padding: 2%;
 }
-
 #logo {
   float: left;
   color: white;
@@ -31,9 +23,8 @@
   margin-top: 1%;
   font-size: 0.5rem;
   padding: 1%;
-
+  text-decoration: none;
 }
-
 #home {
   float: left;
   text-decoration: none;
@@ -42,9 +33,7 @@
   padding: 2%;
   color: white;
   font-size: 0.5rem;
-
 }
-
 #login {
   float: right;
   padding: 2%;
@@ -55,26 +44,11 @@
   padding: 2%;
   color: white;
   font-size: 0.5rem;
-
 }
-
-
-
-.item {
-  text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  display: table-cell;
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
 #home:hover {
   color: #5c7cfa;
   background: white;
 }
-
 #login:hover {
   color: #5c7cfa;
   background: white;
