@@ -13,7 +13,7 @@ const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post( 
+      .post(
         "http://localhost:5000/users/login",
         { email: inputEmail, password: inputPassword },
         { "Content-Type": "application/json" }
@@ -21,35 +21,39 @@ const Login = (props) => {
       .then((json) => {
         if (json.data.message !== "not Authorized") {
           props.successLogin(json.data.data.accessToken);
+          setInputEmail("");
+          setInputPassword("");
+        } else {
+          console.log("no");
         }
-        setInputEmail("");
-        setInputPassword("");
       });
   };
   return (
     <div id="parent-container">
-      <Headers />
+      {/* <Headers /> */}
       <div id="container">
         <form className="login" onSubmit={handleSubmit}>
           <div className="login_input">
             <input
               placeholder="EMAIL"
-              class="loginInput"
+              className="loginInput"
               value={inputEmail}
               onChange={(e) => {
                 setInputEmail(e.target.value);
               }}
             />
+
             <input
               type="password"
               placeholder="PASSWORD"
-              class="loginInput"
+              className="loginInput"
               value={inputPassword}
               onChange={(e) => {
                 setInputPassword(e.target.value);
               }}
             ></input>
           </div>
+
           <div>
             <input type="submit" value="LOGIN" id="loginBtn"></input>
           </div>
