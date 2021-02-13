@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Headers.css";
+import MainLogo from "../img/logo.png";
 
 const Headers = (props) => {
   const img = () => {
@@ -18,10 +19,15 @@ const Headers = (props) => {
   
   return (
     <div className="header">
-      <NavLink exact to="/" className="item" activeClassName="active">
-        홈
-      </NavLink>
-      <NavLink to="/login" className="item" activeClassName="active">
+      {/* <div className="header-menu"> */}
+        {/* <img  id="logo" src={MainLogo} /> */}
+        <NavLink id="logo" to="/">디너쇼          </NavLink> 
+        {/* <span id="logo">디너쇼</span>  */}
+        <NavLink exact to="/" id="home" activeClassName="active">
+          홈
+        </NavLink>
+      {/* </div> */}
+      <NavLink to="/login" id="login" activeClassName="active">
         {props.isLogin ? "로그아웃" : "로그인"}
       </NavLink>
       {props.isLogin ? (
