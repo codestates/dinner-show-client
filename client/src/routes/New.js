@@ -1,15 +1,13 @@
 import React from "react";
 
-const New = (props) => {
-  console.log(props)
+const New = ({isNbntOn, data, getNewData, content}) => {
+  // console.log(isBntOn, handleClick)
   return (
     <div className="MainHeader">
     {
-        props.isBntOn ?
-        <button onClick={props.getSearchData} className="header header-new">
+        <button onClick={getNewData} className="header header-new">
         최신
         </button>
-        : <></>
     }
         </div>
   )

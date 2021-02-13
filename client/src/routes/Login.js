@@ -2,50 +2,73 @@ import React, { useState } from "react";
 import GoogleBtn from "../components/GoogleBtn";
 import "./Login.css";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
+import Headers from "../components/Headers";
 
-const Login = () => {
+const Login = (props) => {
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
+  // const [accessToken, setAccessToken] = useState("");
 
   const handleSubmit = (e) => {
-    console.log("ok");
+    // e.preventDefault();
+    // axios
+    //   .post(
+    //     "http://localhost:5000/users/login",
+    //     { email: inputEmail, password: inputPassword },
+    //     { "Content-Type": "application/json" }
+    //   )
+    //   .then((json) => {
+    //     if (json.data.message !== "not Authorized") {
+    //       console.log(e);
+    //       props.successLogin(json.data.data.accessToken);
+    //     }
+    //     setInputEmail("");
+    //     setInputPassword("");
+    //   });
     e.preventDefault();
     axios
       .post(
-        "https://api.dinnershow.org/users/login",
+        "http://localhost:5000/users/login",
         { email: inputEmail, password: inputPassword },
-        { "Content-Type": "application/json", withCredentials: true }
+        { "Content-Type": "application/json" }
       )
       .then((json) => {
-        console.log("ok2");
-        console.log(json);
-        setInputEmail("");
-        setInputPassword("");
+        if (json.data.message !== "not Authorized") {
+          props.successLogin(json.data.data.accessToken);
+          setInputEmail("");
+          setInputPassword("");
+        } else {
+          console.log("no");
+        }
       });
   };
   return (
     <div id="parent-container">
+      {/* <Headers /> */}
       <div id="container">
         <form className="login" onSubmit={handleSubmit}>
           <div className="login_input">
             <input
               placeholder="EMAIL"
-              class="loginInput"
+              className="loginInput"
               value={inputEmail}
               onChange={(e) => {
                 setInputEmail(e.target.value);
               }}
             />
+
             <input
               type="password"
               placeholder="PASSWORD"
-              class="loginInput"
+              className="loginInput"
               value={inputPassword}
               onChange={(e) => {
                 setInputPassword(e.target.value);
               }}
             ></input>
           </div>
+
           <div>
             <input type="submit" value="LOGIN" id="loginBtn"></input>
           </div>
@@ -54,7 +77,7 @@ const Login = () => {
         <div className="oauth_singup_container">
           <div id="socialLogin">
             <span>구글 계정으로 로그인</span>
-            <GoogleBtn />
+            <GoogleBtn googleLogin={props.googleLogin} />
           </div>
 
           <div id="userSignup">
@@ -67,4 +90,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withRouter(Login);
