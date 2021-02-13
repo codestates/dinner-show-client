@@ -281,7 +281,7 @@ class App extends Component {
     
     return (
       <Router>
-      <Headers isLogin={this.state.isLogin}  profile={this.state.userInfo} />
+      <Route exact path="/" render={() => ( <Main isLogin={this.state.isLogin} profile={this.state.userInfo} />)}/>
       {/* <MainHeaders />  */}
         <div>
           <Switch>
@@ -290,8 +290,8 @@ class App extends Component {
             {/* <Route path="/newcontent" component={NewContents} /> */}
             {/* <Route path="/search" component={Search} /> */}
             {/* <Route path="/toggle" component={Toggle} /> */}
-            <Route path="/login" render={() => ( <Login successLogin={this.successLogin.bind(this)} googleLogin={this.googleLogin.bind(this)} />)}/>
-            <Route component={NoMatch} />
+             <Route path="/login" rMatch} />ender={() => ( <Login successLogin={this.successLogin.bind(this)} googleLogin={this.googleLogin.bind(this)} />)}/>
+            <Route component={No
           </Switch>
         </div>
       </Router>
