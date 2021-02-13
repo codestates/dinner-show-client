@@ -5,7 +5,10 @@ const Trend = ({ isTbntOn, data, getTrendData, content }) => {
   return (
     <div className="MainHeader">
       <button onClick={getTrendData} className="header header-trend">
-        트렌드
+        <span>
+          <i class="icon-chart-line"></i>
+        </span>
+        &nbsp;트렌드
       </button>
     </div>
   );

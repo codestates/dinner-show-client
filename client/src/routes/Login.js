@@ -28,7 +28,7 @@ const Login = (props) => {
     //   });
     e.preventDefault();
     axios
-      .post( 
+      .post(
         "http://localhost:5000/users/login",
         { email: inputEmail, password: inputPassword },
         { "Content-Type": "application/json" }
@@ -49,12 +49,24 @@ const Login = (props) => {
       <div id="container">
         <form className="login" onSubmit={handleSubmit}>
           <div className="login_input">
+            <input
+              placeholder="EMAIL"
+              className="loginInput"
+              value={inputEmail}
+              onChange={(e) => {
+                setInputEmail(e.target.value);
+              }}
+            />
 
-            <input placeholder="EMAIL" className="loginInput" value={inputEmail}
-              onChange={(e) => { setInputEmail(e.target.value); }}/>
-
-            <input type="password" placeholder="PASSWORD" className="loginInput" value={inputPassword} 
-              onChange={(e) => { setInputPassword(e.target.value); }}></input>
+            <input
+              type="password"
+              placeholder="PASSWORD"
+              className="loginInput"
+              value={inputPassword}
+              onChange={(e) => {
+                setInputPassword(e.target.value);
+              }}
+            ></input>
           </div>
 
           <div>
