@@ -12,9 +12,6 @@ body {
     height: 50%;
     /* font-size: 100px; */
   }
-  body {
-    /* background-color: rgb(159, 189, 78); */
-  }
 }
 .MainHeader {
   margin-left: 20px;
@@ -104,6 +101,7 @@ body {
 .mains {
   background-color: rgb(177, 168, 168);
   transition: 0.2s ease-in;
+}
 
 .mains:hover {
   transform: translateY(-10px);
@@ -127,12 +125,10 @@ body {
   height: 180px;
 }
 
-
 .text {
   padding: 5px;
   text-align: left;
 }
-
 
 .date {
   border-top: 0.1px solid rgb(199, 195, 195);
@@ -145,7 +141,4 @@ body {
   padding: 10px;
   display: flex;
   justify-content: space-between;
-
 }
-
-

@@ -51,13 +51,12 @@ class App extends Component {
         name: profileByGoogle.name,
       },
     });
-    console.log(this.state.userInfo);
     this.props.history.push("/");
   };
 
   successLogin = (accessToken) => {
     axios
-      .get("http://localhost:5000/accesstokenrequest", {
+      .get("https://api.dinnershow.org/accesstokenrequest", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
@@ -84,7 +83,6 @@ class App extends Component {
     // this.getSearchData(); //! 해제시, 랜딩페이지에 글목록이 떠있음
     window.addEventListener("scroll", this.onscrollForTbtn);
     window.addEventListener("scroll", this.onscrollForNbtn);
-
   }
 
   componentWillUnmount() {
@@ -128,11 +126,11 @@ class App extends Component {
   getTrendData() {
     axios
       // .get("http://13.209.89.239:5000/contents")
-      .get("http://localhost:5000/contents")
+      .get("https://api.dinnershow.org/contents")
       .then(function (response) {
         // console.log(response.data.data[0]);
         // console.log(response.data.data);
-        
+
         return response.data.data;
       })
       .then((res) => {
@@ -167,7 +165,7 @@ class App extends Component {
   getNewData() {
     axios
       // .get("http://13.209.89.239:5000/contents")
-      .get("http://localhost:5000/contents")
+      .get("https://api.dinnershow.org/contents")
       .then(function (response) {
         // console.log(response.data.data[0]);
         // console.log(response.data.data);
@@ -216,7 +214,9 @@ class App extends Component {
     // console.log("215: ",items)
 
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      console.log(window.innerHeight + window.scrollY >= document.body.offsetHeight)
+      console.log(
+        window.innerHeight + window.scrollY >= document.body.offsetHeight
+      );
       this.setState({ items: items + 10 });
 
       this.getNewData();
@@ -313,7 +313,7 @@ class App extends Component {
         accessToken: null,
       });
       await axios.post(
-        "http://localhost:5000/users/logout",
+        "https://api.dinnershow.org/users/logout",
         {},
         {
           withCredentials: true,
