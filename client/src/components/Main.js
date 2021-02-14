@@ -4,7 +4,7 @@ import Headers from "./Headers";
 import TrendList from "../routes/TrendList";
 import NewList from "../routes/NewList";
 import "./Main.css";
-import { initialState } from "../asset/state";
+// import { initialState } from "../asset/state";
 
 const Main = ({
   data,
@@ -17,6 +17,7 @@ const Main = ({
   isTbntOn,
   isNbntOn,
 }) => {
+  console.log(trendingList)
   return (
     <div className="parent">
       <MainHeader

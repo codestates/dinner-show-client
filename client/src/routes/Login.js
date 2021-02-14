@@ -11,25 +11,10 @@ const Login = (props) => {
   // const [accessToken, setAccessToken] = useState("");
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // axios
-    //   .post(
-    //     "http://localhost:5000/users/login",
-    //     { email: inputEmail, password: inputPassword },
-    //     { "Content-Type": "application/json" }
-    //   )
-    //   .then((json) => {
-    //     if (json.data.message !== "not Authorized") {
-    //       console.log(e);
-    //       props.successLogin(json.data.data.accessToken);
-    //     }
-    //     setInputEmail("");
-    //     setInputPassword("");
-    //   });
     e.preventDefault();
     axios
       .post(
-        "http://localhost:5000/users/login",
+        "https://api.dinnershow.org/users/login",
         { email: inputEmail, password: inputPassword },
         { "Content-Type": "application/json" }
       )
@@ -45,7 +30,6 @@ const Login = (props) => {
   };
   return (
     <div id="parent-container">
-      {/* <Headers /> */}
       <div id="container">
         <form className="login" onSubmit={handleSubmit}>
           <div className="login_input">
@@ -80,8 +64,8 @@ const Login = (props) => {
             <GoogleBtn googleLogin={props.googleLogin} />
           </div>
 
-          <div id="userSignup">
-            <span>아직 회원이 아니신가요?</span>
+          <div id="signupContainer">
+            <div>아직 회원이 아니신가요?</div>
             <button id="signupBtn">회원가입</button>
           </div>
         </div>

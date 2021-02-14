@@ -2,7 +2,6 @@
   font-family: sans-serif;
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -10,21 +9,18 @@ body {
 @media (max-width: 1000px) {
   .container {
     width: 50%;
+    height: 50%;
     /* font-size: 100px; */
   }
-  body {
-    background-color: rgb(159, 189, 78);
-  }
 }
-
 .MainHeader {
+  margin-left: 20px;
   height: 5vh;
+  float: inline;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  /* float: left;
-  width: 25%; */
+  justify-content: left;
+  /* width: 100%; */
 }
 .header-trend:focus {
   color: black;
@@ -46,7 +42,6 @@ body {
   background: white;
   color: black;
 }
-
 .header-new:focus {
   color: black;
   border-bottom: 1.5px solid black;
@@ -62,7 +57,6 @@ body {
   display: table;
   table-layout: fixed;
 }
-
 .header-trend {
   border: 0;
   outline: 0;
@@ -87,20 +81,16 @@ body {
   font-size: 1.1rem;
   font-family: "Lucida Console", "Courier New", monospace;
 }
-
 .header-new:active {
   background: white;
   color: black;
   background-color: rgb(131, 141, 131);
 }
-
 /* / list/ */
-
 .parent {
   background-color: rgb(177, 168, 168);
   width: 100%;
 }
-
 .container {
   margin-top: 80px;
   display: flex;
@@ -112,6 +102,7 @@ body {
   background-color: rgb(177, 168, 168);
   transition: 0.2s ease-in;
 }
+
 .mains:hover {
   transform: translateY(-10px);
 }

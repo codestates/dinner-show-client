@@ -11,17 +11,26 @@
   align-items: center;
   margin-top: 20px;
   padding: 20px;
-
   width: 800px;
   height: 400px;
 }
+
+#signupContainer {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #signupBtn {
   width: 90px;
   height: 45px;
   padding: 10px;
   border: none;
   border-radius: 3px;
+  margin-top: 0.9rem;
 }
+
 #loginBtn {
   width: 100px;
   height: 100px;

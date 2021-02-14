@@ -1,5 +1,4 @@
 import React from "react";
-
 const TrendList = ({ content }) => {
   // console.log(content)
   return (
@@ -15,6 +14,7 @@ const TrendList = ({ content }) => {
         <div className="date">
           Created At {content.createdAt.substring(0, 10)}
         </div>
+   
         <div className="infoContainer">
           <span className="nameInfo">by 승익</span>
           <span className="heartInfo">{content.heart_number}</span>
@@ -25,3 +25,4 @@ const TrendList = ({ content }) => {
 };
 
 export default TrendList;
+
