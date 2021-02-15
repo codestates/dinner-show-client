@@ -44,4 +44,9 @@
 > 서버
 <img src = "https://user-images.githubusercontent.com/54949453/107902184-121c9d80-6f89-11eb-97f7-ab020bbe73b9.png" width="80%">
 
+### Show Our Team Project Details
+: 더 자세한 내용을 함께 확인해보아요.   
+[클라이언트(Client)](https://github.com/codestates/dinner-show-client/wiki)
+[서버(Server)](https://github.com/codestates/dinner-show-client/wiki)
+
 <br/><br/><br/><br/>
