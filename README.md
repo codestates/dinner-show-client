@@ -46,6 +46,6 @@
 
 ### Show Our Team Project Details
 : 더 자세한 내용을 함께 확인해보아요.
-
-[깃허브 위키 링크](https://github.com/codestates/dinner-show-client/wiki)
+[클라이언트: 깃허브 위키 링크](https://github.com/codestates/dinner-show-client/wiki)
+[서버: 깃허브 위키 링크](https://github.com/codestates/dinner-show-client/wiki)
 <br/><br/><br/><br/>
