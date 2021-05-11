@@ -48,8 +48,8 @@
 
 ### Show Our Team Project Details
 : 더 자세한 내용을 함께 확인해보아요.   
-[1. 클라이언트(Client)](https://github.com/codestates/dinner-show-client/wiki)
-[2. 서버(Server)](https://github.com/codestates/dinner-show-client/wiki)
-[3. 작업과정: 노션(Notion)](https://www.notion.so/2-28a79ebe2d984c4b804a6b75042ed2f1)
+[1. 회고](https://bit.ly/3xRhW5f)
+[2. 배포](www.dinnershow.org)
+[3. 클라이언트 위키(Client)](https://github.com/codestates/dinner-show-client/wiki)
 
 <br/><br/><br/><br/>
