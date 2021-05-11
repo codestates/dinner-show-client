@@ -48,8 +48,9 @@
 
 ### Show Our Team Project Details
 : 더 자세한 내용을 함께 확인해보아요.   
-[1. 회고](https://bit.ly/3xRhW5f)
-[2. 배포](www.dinnershow.org)
-[3. 클라이언트 위키(Client)](https://github.com/codestates/dinner-show-client/wiki)
+
+[1. 배포](www.dinnershow.org)
+[2. 클라이언트 위키(Client)](https://github.com/codestates/dinner-show-client/wiki)
+[3. 서버 위키(Server)](https://github.com/codestates/dinner-show-server/wiki)
 
 <br/><br/><br/><br/>
